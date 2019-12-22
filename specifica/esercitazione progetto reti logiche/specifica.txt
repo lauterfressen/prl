@@ -1,0 +1,26 @@
+
+Esempio di progetto di reti logiche svolto.
+
+Progettare un modulo VHDL che computi il quadrato di un numero per somme successive, quindi senza usare un sommatore.
+
+Esempio:
+2^2 = 2+2
+3^2 = 3+3+3
+
+Il modulo VHDL accede a una memoria indirizzata al byte. L'operando da elevare al quadrato si trova nella locazione di memoria 0. Il risultato, di dimensione 2 byte, viene scritto nel modo seguente: il byte meno significativo viene scritto all'indirizzo 1, mentre quello più significativo all'indirizzo 2.
+
+Il modulo VHDL è dotato di un ingresso start e di un'uscita done. Quando l'ingresso start è alto per almeno un ciclo di clock il modulo inizia la lettura dei dati e la computazione. Dopo aver scritto il risultato, il modulo porta l'uscita done alta per un ciclo di clock. Non è possibile inviare altri comandi start prima dell'arrivo del segnale done.
+
+L'interfaccia del modulo deve essere la seguente:
+
+entity square is
+    Port ( i_clk : in STD_LOGIC;
+           i_res : in STD_LOGIC;
+           i_start : in STD_LOGIC;
+           o_done : out STD_LOGIC;
+           i_data : in STD_LOGIC_VECTOR (7 downto 0);
+           o_data : out STD_LOGIC_VECTOR (7 downto 0);
+           o_addr : out STD_LOGIC_VECTOR (1 downto 0);
+           o_en : out STD_LOGIC;
+           o_we : out STD_LOGIC);
+end square;
