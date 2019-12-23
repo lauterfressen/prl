@@ -9,6 +9,7 @@ entity datapath is
            o_data : out STD_LOGIC_VECTOR (7 downto 0);
            r0_load : in STD_LOGIC;
            r1_load : in STD_LOGIC;
+           r2_load : in STD_LOGIC;
            sel : in STD_LOGIC;
            o_end : out STD_LOGIC);
 end datapath;
@@ -16,6 +17,7 @@ end datapath;
 architecture Behavioral of datapath is
 signal o_reg0 : STD_LOGIC_VECTOR (7 downto 0);
 signal o_reg1 : STD_LOGIC_VECTOR (2 downto 0);
+signal o_reg2 : STD_LOGIC_VECTOR (3 downto 0);
 signal sum : STD_LOGIC_VECTOR(2 downto 0);
 signal dec : STD_LOGIC_VECTOR(3 downto 0);
 signal sub : STD_LOGIC_VECTOR(7 downto 0);
@@ -42,11 +44,22 @@ begin
         end if;
     end process;
     
+    process(i_clk, i_rst)
+    begin
+        if(i_rst = '1') then
+            o_reg2 <= "0000";
+        elsif i_clk'event and i_clk = '1' then
+            if(r2_load = '1') then
+                o_reg2 <= dec;
+            end if;
+        end if;
+    end process;
+    
     sum <= o_reg1 + "001";
     
     with sel select
         o_data <= o_reg0 when '0',
-                  '1' & (o_reg1 - "001") & dec when '1',
+                  '1' & (o_reg1 - "001") & o_reg2 when '1',
                   "XXXXXXXX" when others;
     
     with sub(1 downto 0) select

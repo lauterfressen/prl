@@ -22,11 +22,13 @@ component datapath is
            o_data : out STD_LOGIC_VECTOR (7 downto 0);
            r0_load : in STD_LOGIC;
            r1_load : in STD_LOGIC;
+           r2_load : in STD_LOGIC;
            sel : in STD_LOGIC;
            o_end : out STD_LOGIC);
 end component;
 signal r0_load : STD_LOGIC;
 signal r1_load : STD_LOGIC;
+signal r2_load : STD_LOGIC;
 signal sel : STD_LOGIC;
 signal o_end : STD_LOGIC;
 type S is (S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12);
@@ -39,6 +41,7 @@ begin
         o_data,
         r0_load,
         r1_load,
+        r2_load,
         sel,
         o_end
     );
@@ -125,6 +128,7 @@ begin
     begin
         r0_load <= '0';
         r1_load <= '0';
+        r2_load <= '0';
         sel <= '0';
         o_address <= "0000000000000000";
         o_en <= '0';
@@ -142,31 +146,39 @@ begin
                 o_address <= "0000000000000001";
                 o_en <= '1';
                 r1_load <= '1';
+                r2_load <= '1';
             when S3 =>
                 o_address <= "0000000000000010";
                 o_en <= '1';
                 r1_load <= '1';
+                r2_load <= '1';
             when S4 =>
                 o_address <= "0000000000000011";
                 o_en <= '1';
                 r1_load <= '1';
+                r2_load <= '1';
             when S5 =>
                 o_address <= "0000000000000100";
                 o_en <= '1';
                 r1_load <= '1';
+                r2_load <= '1';
             when S6 =>
                 o_address <= "0000000000000101";
                 o_en <= '1';
                 r1_load <= '1';
+                r2_load <= '1';
             when S7 =>
                 o_address <= "0000000000000110";
                 o_en <= '1';
                 r1_load <= '1';
+                r2_load <= '1';
             when S8 =>
                 o_address <= "0000000000000111";
                 o_en <= '1';
                 r1_load <= '1';
+                r2_load <= '1';
             when S9 =>
+                r2_load <= '1';
             when S10 =>
                 o_address <= "0000000000001001";
                 o_en <= '1';
