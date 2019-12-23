@@ -22,14 +22,14 @@ component datapath is
            o_data : out STD_LOGIC_VECTOR (7 downto 0);
            r0_load : in STD_LOGIC;
            r1_load : in STD_LOGIC;
-           d_sel : in STD_LOGIC;
+           sel : in STD_LOGIC;
            o_end : out STD_LOGIC);
 end component;
 signal r0_load : STD_LOGIC;
 signal r1_load : STD_LOGIC;
-signal d_sel : STD_LOGIC;
+signal sel : STD_LOGIC;
 signal o_end : STD_LOGIC;
-type S is (S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12,S13);
+type S is (S0,S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11,S12);
 signal cur_state, next_state : S;
 begin
     DATAPATH0: datapath port map(
@@ -39,7 +39,7 @@ begin
         o_data,
         r0_load,
         r1_load,
-        d_sel,
+        sel,
         o_end
     );
     
@@ -125,7 +125,7 @@ begin
     begin
         r0_load <= '0';
         r1_load <= '0';
-        d_sel <= '0';
+        sel <= '0';
         o_address <= "0000000000000000";
         o_en <= '0';
         o_we <= '0';
@@ -171,12 +171,12 @@ begin
                 o_address <= "0000000000001001";
                 o_en <= '1';
                 o_we <= '1';
-                d_sel <= '0';
+                sel <= '0';
             when S11 =>
                 o_address <= "0000000000001001";
                 o_en <= '1';
                 o_we <= '1';
-                d_sel <= '1';
+                sel <= '1';
             when S12 =>
                 o_done <= '1';
         end case;

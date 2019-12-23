@@ -1,0 +1,5 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Failure: Simulation Ended!, TEST PASSATO
+Time: 1650 ns  Iteration: 3  Process: /project_tb/test  File: C:/Users/stefano/Desktop/prl/project_reti_logiche.srcs/sim_1/imports/specifica/tb_pfrl_2020_no_wz.vhd
+$finish called at time : 1650 ns : File "C:/Users/stefano/Desktop/prl/project_reti_logiche.srcs/sim_1/imports/specifica/tb_pfrl_2020_no_wz.vhd" Line 103

@@ -2,13 +2,103 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Mon Dec 23 12:34:04 2019
-# Process ID: 2256
+# Start of session at: Mon Dec 23 15:52:11 2019
+# Process ID: 6996
 # Current directory: C:/Users/stefano/Desktop/prl
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3276 C:\Users\stefano\Desktop\prl\project_reti_logiche.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3840 C:\Users\stefano\Desktop\prl\project_reti_logiche.xpr
 # Log file: C:/Users/stefano/Desktop/prl/vivado.log
 # Journal file: C:/Users/stefano/Desktop/prl\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/stefano/Desktop/prl/project_reti_logiche.xpr
 update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+import_files -fileset sim_1 -norecurse {C:/Users/stefano/Desktop/prl/specifica/tb_pfrl_2020_in_wz.vhd C:/Users/stefano/Desktop/prl/specifica/tb_pfrl_2020_no_wz.vhd}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files C:/Users/stefano/Desktop/prl/project_reti_logiche.srcs/sim_1/imports/specifica/tb_pfrl_2020_in_wz.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 C:/Users/stefano/Desktop/prl/project_reti_logiche.srcs/sim_1/imports/specifica/tb_pfrl_2020_in_wz.vhd
+file delete -force C:/Users/stefano/Desktop/prl/project_reti_logiche.srcs/sim_1/imports/specifica/tb_pfrl_2020_in_wz.vhd
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source project_tb.tcl
+current_wave_config {Untitled 1}
+add_wave {{/project_tb/UUT/DATAPATH0/o_reg0}} {{/project_tb/UUT/DATAPATH0/o_reg1}} 
+relaunch_sim
+current_wave_config {Untitled 1}
+add_wave {{/project_tb/UUT/DATAPATH0/sub}} 
+relaunch_sim
+run 10000ns
+create_fileset -simset sim_2
+set_property SOURCE_SET sources_1 [get_filesets sim_2]
+import_files -fileset sim_2 -norecurse C:/Users/stefano/Desktop/prl/specifica/tb_pfrl_2020_in_wz.vhd
+current_fileset -simset [ get_filesets sim_2 ]
+update_compile_order -fileset sim_2
+update_compile_order -fileset sim_2
+run 10000ns
+current_wave_config {Untitled 1}
+add_wave {{/project_tb/UUT/DATAPATH0/o_end}} 
+relaunch_sim
+run 10000ns
+launch_simulation -simset [get_filesets sim_2 ]
+source project_tb.tcl
+run 10000ns
+close_sim
+launch_simulation -simset [get_filesets sim_2 ]
+source project_tb.tcl
+run 10000ns
+current_wave_config {Untitled 3}
+add_wave {{/project_tb/UUT/DATAPATH0}} 
+run 10000
+relaunch_sim
+relaunch_sim
+run 10000ns
+relaunch_sim
+close_sim
+launch_simulation -simset [get_filesets sim_2 ]
+source project_tb.tcl
+run 10000ns
+current_wave_config {Untitled 4}
+add_wave {{/project_tb/UUT/DATAPATH0}} 
+relaunch_sim
+close_sim
+launch_simulation -simset [get_filesets sim_2 ]
+source project_tb.tcl
+run 10000ns
+current_wave_config {Untitled 5}
+add_wave {{/project_tb/UUT/DATAPATH0}} 
+relaunch_sim
+run 10000ns
+relaunch_sim
+relaunch_sim
+run 10000ns
+relaunch_sim
+run 10000ns
+current_wave_config {Untitled 6}
+add_wave {{/project_tb/UUT/DATAPATH0}} 
+relaunch_sim
+relaunch_sim
+run 10000n
+run 10000ns
+relaunch_sim
+run 10000ns
+relaunch_sim
+run 10000ns
+close_sim
+close_sim
+launch_simulation -simset [get_filesets sim_2 ]
+source project_tb.tcl
+run 10000ns
+current_wave_config {Untitled 7}
+add_wave {{/project_tb/UUT/DATAPATH0}} 
+relaunch_sim
+run 10000ns
+relaunch_sim
+relaunch_sim
+run 10000ns
+save_wave_config {C:/Users/stefano/Desktop/prl/project_tb_behav.wcfg}
+add_files -fileset sim_2 -norecurse C:/Users/stefano/Desktop/prl/project_tb_behav.wcfg
+set_property xsim.view C:/Users/stefano/Desktop/prl/project_tb_behav.wcfg [get_filesets sim_2]
+close_sim
