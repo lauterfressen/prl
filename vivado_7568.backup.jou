@@ -2,13 +2,15 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Mon Dec 23 12:34:04 2019
-# Process ID: 2256
+# Start of session at: Mon Dec 23 09:50:31 2019
+# Process ID: 7568
 # Current directory: C:/Users/stefano/Desktop/prl
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3276 C:\Users\stefano\Desktop\prl\project_reti_logiche.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2480 C:\Users\stefano\Desktop\prl\project_reti_logiche.xpr
 # Log file: C:/Users/stefano/Desktop/prl/vivado.log
 # Journal file: C:/Users/stefano/Desktop/prl\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/stefano/Desktop/prl/project_reti_logiche.xpr
 update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse C:/Users/stefano/Desktop/clock.xdc
+import_files -fileset constrs_1 C:/Users/stefano/Desktop/clock.xdc

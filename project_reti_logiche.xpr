@@ -67,22 +67,30 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/Desktop/square.vhd">
+      <File Path="$PSRCDIR/sources_1/imports/Desktop/project_reti_logiche.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../square.vhd"/>
-          <Attr Name="ImportTime" Val="1577047119"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../project_reti_logiche.vhd"/>
+          <Attr Name="ImportTime" Val="1577090915"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="square"/>
+        <Option Name="TopModule" Val="project_reti_logiche"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
+      <File Path="$PSRCDIR/constrs_1/imports/Desktop/clock.xdc">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../clock.xdc"/>
+          <Attr Name="ImportTime" Val="1577047119"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
@@ -91,7 +99,7 @@
       <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="square"/>
+        <Option Name="TopModule" Val="project_reti_logiche"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
